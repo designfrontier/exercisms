@@ -4,10 +4,10 @@
 //
 
 class HelloWorld {
-  hello(name) {
-    //
-    // YOUR CODE GOES HERE
-    //
+  hello(inputIn) {
+    const input = inputIn || 'World';
+
+    return 'Hello, ' + input + '!';
   }
 }
 
