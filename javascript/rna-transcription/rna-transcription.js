@@ -12,21 +12,20 @@ var mapDNAtoRNA = {
     , 'C': 'G'
   }
 
-  , toRNA = function (dnaString) {
-
-    dnaString.split('').map(function (item) {
+  , toRna = function (dnaString) {
+    return dnaString.split('').map(function (item) {
       return mapDNAtoRNA[item];
-    });
+    }).join('');
   }
-  , toDNA = function (rnaString) {
-    rnaString.split('').map(function (item) {
+  , toDna = function (rnaString) {
+    return rnaString.split('').map(function (item) {
       return mapRNAtoDNA[item];
-    });
+    }).join('');
   };
 
 module.exports = function () {
   return {
-    toRNA: toRNA
-    , toDNA: toDNA
+    toRna: toRna
+    , toDna: toDna
   };
 };
