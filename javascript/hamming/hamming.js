@@ -1,18 +1,15 @@
-var compute = function (stringA, stringB) {
-  var a = stringA.split('') //convert strings to arrays
-      , b = stringB.split('');
-
-  if (a.length !== b.length) {
+var compute = function (strandA, strandB) {
+  if (strandA.length !== strandB.length) {
     throw new Error('DNA strands must be of equal length.');
   }
 
-  return a.reduce(function (prev, value, index) {
-    if (value !== b[index]) {
-      prev.push(value);
-    }
+  if (strandA === strandB) {
+    return 0;
+  }
 
-    return prev;
-  }, []).length;
+  return strandA.split('').reduce(function (prev, value, index) {
+    return (value !== strandB[index]) ? prev + 1 : prev;
+  }, 0);
 };
 
 module.exports = compute;
